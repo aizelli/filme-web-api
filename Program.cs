@@ -1,3 +1,6 @@
+using filme_web_api.DataBase;
+using filme_web_api.Models;
+
 namespace filme_web_api
 {
     public class Program
@@ -12,6 +15,8 @@ namespace filme_web_api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddTransient<IFilmeRepository, FilmeRepository>();
 
             var app = builder.Build();
 
